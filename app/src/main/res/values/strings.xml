@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AvanceProyecto_Atenisa</string>
+    <string name="producto">Producto</string>
+    <string name="go_back">Go Back</string>
+    <string name="btAdd">btAdd</string>
+    <string name="btRemove">btRemove</string>
+    <string name="btFavoritos">btFavoritos\n</string>
+    <string name="custom">Custom</string>
+    <string name="add_to_basket">Add To Basket</string>
+    <string name="productonombre">Jarrón de cerámica</string>
+</resources>

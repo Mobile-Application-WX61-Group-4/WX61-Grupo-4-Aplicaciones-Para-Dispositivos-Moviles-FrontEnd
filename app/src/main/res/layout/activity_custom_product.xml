@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".CustomProduct"
+    android:background="#0A3344"
+    >
+
+    <Button
+        android:id="@+id/bt_Goback"
+        android:layout_width="136dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="247dp"
+        android:layout_marginBottom="627dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/abhaya_libre"
+        android:text="@string/go_back"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:icon="@drawable/baseline_arrow_back_ios_24"
+        app:iconPadding="1dp"
+        app:iconTint="#040404"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="#C5C5C5" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvProductDetails"
+        android:layout_width="411dp"
+        android:layout_height="386dp"
+        android:layout_marginTop="360dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.617">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvProductoNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="310dp"
+                android:fontFamily="@font/abhaya_libre"
+                android:text="@string/productonombre"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.11"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btAddBasket"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="137dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="137dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#FF234D5E"
+                android:fontFamily="@font/abhaya_libre"
+                android:text="@string/add_to_basket"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                app:iconTint="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvColors" />
+
+            <Button
+                android:id="@+id/btCraftsman"
+                android:layout_width="182dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="210dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="207dp"
+                android:layout_marginBottom="187dp"
+                android:backgroundTint="#FF234D5E"
+                android:fontFamily="@font/abhaya_libre"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="Contact the craftsman"
+                android:textAlignment="gravity"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toTopOf="@+id/btAddBasket"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProductoNombre"
+                app:layout_constraintVertical_bias="0.909" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvColors"
+                android:layout_width="393dp"
+                android:layout_height="152dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="11dp"
+                app:layout_constraintBottom_toTopOf="@+id/btAddBasket"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btCraftsman" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginBottom="41dp"
+                android:fontFamily="@font/abhaya_libre"
+                android:text="Seleciona color:"
+                android:textSize="20dp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toTopOf="@+id/rvColors"
+                app:layout_constraintEnd_toStartOf="@+id/btCraftsman"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProductoNombre"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="248dp"
+        android:layout_height="250dp"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="85dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
