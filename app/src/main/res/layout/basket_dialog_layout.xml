@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/basket_dialog">
+
+    <TextView
+        android:id="@+id/tvDeliveryAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/abhaya_libre_medium"
+        android:text="@string/delivery_address"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etDeliveryAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/abhaya_libre_medium"
+        android:hint="@string/_10th_avenue_lekki_lagos_state"
+        android:padding="8dp"
+        android:background="@drawable/payment_hint_background"
+        android:textColorHint="@drawable/payment_hint_color"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/abhaya_libre_medium"
+        android:text="@string/number_we_can_call"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/abhaya_libre_medium"
+        android:hint="@string/_09090605708"
+        android:padding="8dp"
+        android:background="@drawable/payment_hint_background"
+        android:textColorHint="@drawable/payment_hint_color"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp">
+
+        <Button
+            android:id="@+id/btnPayOnDelivery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/abhaya_libre_medium"
+            android:text="@string/pay_on_delivery"
+            android:textSize="16sp"
+            android:background="@drawable/payment_button_background"
+            android:textColor="@drawable/payment_button_text_color"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/btnPayWithCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/abhaya_libre_medium"
+            android:text="@string/pay_with_card"
+            android:textSize="16sp"
+            android:background="@drawable/payment_button_background"
+            android:textColor="@drawable/payment_button_text_color"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
