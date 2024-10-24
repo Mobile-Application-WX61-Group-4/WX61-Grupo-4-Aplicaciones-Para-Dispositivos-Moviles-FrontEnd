@@ -29,10 +29,11 @@
              />
         <activity android:name=".activities.ChatBoundedContext.SubirProductoActivity" />
         <activity android:name=".activities.BasketActivity" />
-
+        <activity
+            android:name=".activities.MainMenuActivity"/>
 
         <activity
-            android:name=".activities.MainMenuActivity"
+            android:name=".activities.LoginBoundedContext.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
