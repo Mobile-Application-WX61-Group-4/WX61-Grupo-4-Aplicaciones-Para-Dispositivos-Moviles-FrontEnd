@@ -1,10 +1,10 @@
-package com.example.avanceproyecto_atenisa
+package com.example.avanceproyecto_atenisa.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.ViewStub
 import android.widget.Button
-import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,16 +12,21 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.avanceproyecto_atenisa.R
 import com.example.avanceproyecto_atenisa.adapter.ColorAdapter
 import com.example.avanceproyecto_atenisa.models.Color
+import com.example.avanceproyecto_atenisa.models.Product
+import com.squareup.picasso.Picasso
 
-class CustomProduct : AppCompatActivity() {
+class CustomProduct : AppCompatActivity(), ColorAdapter.OnItemClickListener {
 
     var colors = ArrayList<Color>()
-    var colorAdapter = ColorAdapter(colors)
+    //var colorAdapter = ColorAdapter(colors)
+    private var product: Product? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_custom_product)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -29,29 +34,44 @@ class CustomProduct : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-
-        loadcolor()
-        initView()
+        val product = intent.getSerializableExtra("product") as? Product
 
         val btGoback: Button = findViewById(R.id.bt_Goback)
         btGoback.setOnClickListener {
+
             val intent = Intent(this, ProductDetails::class.java)
+            intent.putExtra("product", product)
             startActivity(intent)
             finish()
         }
 
         val btAddBasket: Button = findViewById(R.id.btAddBasket)
         btAddBasket.setOnClickListener {
+
+
             showAlert()
         }
+
+        if (product != null) {
+            findViewById<TextView>(R.id.tvProductoNombre).text = product.name
+            val imageView = findViewById<ImageView>(R.id.ivImage)
+
+            Picasso.get().load(product.image).into(imageView)
+        } else {
+            // Handle the error case where the product is null
+            println("Error: Product is null")
+        }
+
+        loadcolor()
     }
 
-    private fun initView() {
+    override fun onResume() {
+        super.onResume()
         val rvColors = findViewById<RecyclerView>(R.id.rvColors)
-        rvColors.adapter = colorAdapter
+        rvColors.adapter = ColorAdapter(colors, this)
         rvColors.layoutManager = LinearLayoutManager(this)
     }
+
 
     private fun loadcolor() {
         colors.add(Color("Rojo"))
@@ -73,5 +93,9 @@ class CustomProduct : AppCompatActivity() {
         }
         val alertDialog: AlertDialog = builder.create()
         alertDialog.show()
+    }
+
+    override fun onItemClick() {
+
     }
 }

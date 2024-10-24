@@ -9,15 +9,39 @@
 
     <Button
         android:id="@+id/btProducto"
-        android:layout_width="125dp"
-        android:layout_height="60dp"
+        android:layout_width="155dp"
+        android:layout_height="81dp"
         android:layout_marginStart="146dp"
-        android:layout_marginTop="109dp"
         android:layout_marginEnd="175dp"
-        android:layout_marginBottom="574dp"
+        android:layout_marginBottom="80dp"
         android:text="@string/producto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProducts"
+        android:layout_width="409dp"
+        android:layout_height="568dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/btProducto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tvBasket"
+        android:layout_width="117dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="16dp"
+        android:text="Canasta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btProducto" />
 </androidx.constraintlayout.widget.ConstraintLayout>

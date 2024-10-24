@@ -1,6 +1,5 @@
-package com.example.avanceproyecto_atenisa
+package com.example.avanceproyecto_atenisa.activities
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
@@ -8,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.avanceproyecto_atenisa.R
 
 class AddColors : AppCompatActivity() {
 
@@ -32,7 +32,10 @@ class AddColors : AppCompatActivity() {
             tvcantidad.text = cantidad.toString()
         }
         btremove.setOnClickListener {
-            cantidad--
+
+            if (cantidad > 0) {
+                cantidad--
+            }
             tvcantidad.text = cantidad.toString()
         }
     }

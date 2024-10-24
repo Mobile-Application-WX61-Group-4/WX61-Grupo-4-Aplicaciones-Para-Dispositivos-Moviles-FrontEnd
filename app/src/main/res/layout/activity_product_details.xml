@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProductDetails"
+    tools:context=".activities.ProductDetails"
     android:background="#0A3344"
     >
 
@@ -115,7 +115,6 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="310dp"
                 android:fontFamily="@font/abhaya_libre"
-                android:text="Jarrón de cerámica"
                 android:textSize="26dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -123,7 +122,8 @@
                 app:layout_constraintHorizontal_bias="0.11"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="sdasdasdasda" />
 
             <ImageButton
                 android:id="@+id/btFavoritos"
@@ -145,7 +145,7 @@
                 app:tint="#C77966" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tvPriice"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -174,7 +174,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/btBasquet2"
                 android:layout_width="119dp"
                 android:layout_height="55dp"
                 android:layout_marginBottom="24dp"
@@ -201,11 +201,12 @@
                 app:layout_constraintVertical_bias="0.668">
 
                 <TextView
+                    android:id="@+id/tvDetalis"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/abhaya_libre"
                     android:padding="20dp"
-                    android:text="Para el desarrollo del proyecto decidimos enfocarnos en uno de los fenomenos naturales mas impredecible y devastadores, que son los sismos. Según el Servicio Geológico de los Estados Unidos (USGS), se producen aproximadamente 500,000 terremotos detectables anualmente, de los cuales 100,000 pueden ser sentidos, y alrededor de 100 daños significativo  La adecuada detección y moniterio de los eventos sísmicos es muy importante para mejorara las respuestas a emergencias y disminuir los posibles daños que estos puedan causar. El monitoreo sistmico depende de las redes de estaciones que registran los movimientos del suelo, pero no todas las áreas del planeta están cuviertas por estas estaciones, y si consideramos que se pueden generar reportes inexactos en zonas donde la cobertura sísmica es escasa. Entonces la probleamtica se agrava mas  "
+                    android:text="fdgfgdfgdfg"
                     android:textSize="18dp" />
 
             </ScrollView>
@@ -231,7 +232,7 @@
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivImage"
         android:layout_width="226dp"
         android:layout_height="197dp"
         android:layout_marginStart="103dp"

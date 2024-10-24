@@ -1,42 +1,51 @@
+
 package com.example.avanceproyecto_atenisa.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.example.avanceproyecto_atenisa.R
 import com.example.avanceproyecto_atenisa.models.Product
 
-class ProductAdapter(val products: List<Product>, val itemClickListener: OnItemClickListener): Adapter<ProductPrototype>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductPrototype {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_product_details, parent, false)
+class ProductAdapter(private val products: List<Product>,private val itemClickListener: OnItemClickListener): Adapter<ProductAdapter.ProductViewHolder>() {
+    inner class ProductViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)    {
+        private val tvName: TextView = itemView.findViewById(R.id.tvName)
+        private val tvPrice: TextView = itemView.findViewById(R.id.tvPrice)
+        private val btDetails: Button = itemView.findViewById(R.id.btMainDetails)
+        private val cvProduct: CardView = itemView.findViewById(R.id.cvProduct)
 
-        return ProductPrototype(view)
+        fun bind(product: Product, clickListener: OnItemClickListener) {
+            tvName.text = product.name
+            tvPrice.text = product.price.toString()
+
+            btDetails.setOnClickListener {
+                clickListener.onItemClick(product)
+            }
+        }
+
     }
 
-    override fun onBindViewHolder(holder: ProductPrototype, position: Int) {
-        holder.bind(products.get(position), itemClickListener)    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductAdapter.ProductViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.prototype_viewproduct, parent, false)
+        return ProductViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ProductAdapter.ProductViewHolder, position: Int) {
+        holder.bind(products[position], itemClickListener)
+    }
 
     override fun getItemCount(): Int {
         return products.size
     }
 
-}
-
-class ProductPrototype(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    //vincular los componentes de mainactivity con mi logia
-    val btproducto = itemView.findViewById<Button>(R.id.btProducto)
-
-    fun bind(product: Product, itemClickListener: OnItemClickListener){
-        btproducto.setOnClickListener{
-            itemClickListener.OnItemClicked(product)
-        }
+    interface OnItemClickListener {
+        fun onItemClick(product: Product)
     }
-
 }
 
-interface OnItemClickListener{ //para que al dar clic en un item se pueda hacer algo
-    fun OnItemClicked(product: Product)
-}
+
