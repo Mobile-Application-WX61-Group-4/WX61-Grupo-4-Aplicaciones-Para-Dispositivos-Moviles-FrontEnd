@@ -1,4 +1,4 @@
-package com.example.artisania_mobile_views
+package com.example.artisania_mobile_views.activities
 
 import android.app.Dialog
 import android.content.Intent
@@ -11,8 +11,8 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.artisania_mobile_views.Adapter.BasketRecyclerViewAdapter
-import com.example.artisania_mobile_views.Adapter.HorizontalRecyclerView
+import com.example.artisania_mobile_views.Adapters.BasketRecyclerViewAdapter
+import com.example.artisania_mobile_views.R
 
 class BasketActivity : AppCompatActivity() {
 

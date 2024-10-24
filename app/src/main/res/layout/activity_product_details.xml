@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#0A3344"
+    >
+
+
+    <Button
+        android:id="@+id/bt_Goback"
+        android:layout_width="136dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="247dp"
+        android:layout_marginBottom="627dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/abhaya_libre"
+        android:text="@string/go_back"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:icon="@drawable/baseline_arrow_back_ios_24"
+        app:iconPadding="1dp"
+        app:iconTint="#040404"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="#C5C5C5" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvProductDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="340dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.617">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="482dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="148dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="215dp"
+                android:layout_marginBottom="226dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.266">
+
+                <ImageButton
+                    android:id="@+id/btAdd"
+                    android:layout_width="62dp"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="false"
+                    android:backgroundTint="#FFFFFF"
+                    android:contentDescription="@string/btadd"
+                    android:cropToPadding="false"
+
+                    android:scaleType="centerCrop"
+
+                    app:srcCompat="@drawable/baseline_add_circle_24"
+
+                    app:tint="#C77966" />
+
+                <TextView
+                    android:id="@+id/tvCantidad"
+                    android:layout_width="28dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/abhaya_libre"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/btRemove"
+                    android:layout_width="62dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="#FFFFFF"
+                    android:contentDescription="@string/btremove"
+                    android:scaleType="centerCrop"
+
+                    app:srcCompat="@drawable/baseline_remove_circle_24"
+
+
+                    app:tint="#C77966" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvProductoNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="310dp"
+                android:fontFamily="@font/abhaya_libre"
+                android:text="Jarrón de cerámica"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.11"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageButton
+                android:id="@+id/btFavoritos"
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="144dp"
+                android:backgroundTint="#FFFFFF"
+                android:contentDescription="@string/btfavoritos"
+                android:scaleType="centerCrop"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.206"
+                app:srcCompat="@drawable/baseline_recommend_24"
+                app:tint="#C77966" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="95dp"
+                android:fontFamily="@font/abhaya_libre"
+                android:text="S/ 2,000"
+                android:textColor="#000000"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/btFavoritos"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btAddBasket"
+                android:layout_width="119dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="#FF234D5E"
+                android:fontFamily="@font/abhaya_libre"
+                android:text="@string/custom"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:iconTint="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="119dp"
+                android:layout_height="55dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="#234D5E"
+                android:fontFamily="@font/abhaya_libre"
+                android:text="Add to basket"
+                android:textSize="15dp"
+                app:iconTint="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toEndOf="@+id/btAddBasket" />
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="407dp"
+                android:layout_height="180dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.668">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abhaya_libre"
+                    android:padding="20dp"
+                    android:text="Para el desarrollo del proyecto decidimos enfocarnos en uno de los fenomenos naturales mas impredecible y devastadores, que son los sismos. Según el Servicio Geológico de los Estados Unidos (USGS), se producen aproximadamente 500,000 terremotos detectables anualmente, de los cuales 100,000 pueden ser sentidos, y alrededor de 100 daños significativo  La adecuada detección y moniterio de los eventos sísmicos es muy importante para mejorara las respuestas a emergencias y disminuir los posibles daños que estos puedan causar. El monitoreo sistmico depende de las redes de estaciones que registran los movimientos del suelo, pero no todas las áreas del planeta están cuviertas por estas estaciones, y si consideramos que se pueden generar reportes inexactos en zonas donde la cobertura sísmica es escasa. Entonces la probleamtica se agrava mas  "
+                    android:textSize="18dp" />
+
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="273dp"
+                android:fontFamily="@font/abhaya_libre"
+                android:text="One Pack Contains:"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="226dp"
+        android:layout_height="197dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/cvProductDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_Goback"
+        tools:srcCompat="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,14 +13,24 @@
         android:theme="@style/Theme.Artisania_mobile_views"
         tools:targetApi="31">
         <activity
-            android:name=".OrderConfirmationActivity"
+            android:name=".activities.ChatBoundedContext.ChatArtesano"
+            android:exported="false" />
+        <activity android:name=".activities.BuyProductsBoundedContext.CustomProduct" />
+        <activity android:name=".activities.BuyProductsBoundedContext.ProductDetails" />
+
+
+        <activity
+            android:name=".activities.OrderConfirmationActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-        <activity android:name=".BasketActivity" />
+        <activity android:name=".activities.ChatBoundedContext.ChatMainActivity"
+             />
+        <activity android:name=".activities.ChatBoundedContext.SubirProductoActivity" />
+
         <activity
-            android:name=".MainMenuActivity"
+            android:name=".activities.MainMenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,6 +1,5 @@
-package com.example.artisania_mobile_views
+package com.example.artisania_mobile_views.activities
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
@@ -10,8 +9,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.artisania_mobile_views.Adapter.HorizontalRecyclerView
-import com.example.artisania_mobile_views.Adapter.ViewPageCatalogAdapter
+import com.example.artisania_mobile_views.Adapters.HorizontalRecyclerView
+import com.example.artisania_mobile_views.Adapters.ViewPageCatalogAdapter
+import com.example.artisania_mobile_views.R
+import com.example.artisania_mobile_views.activities.ChatBoundedContext.SubirProductoActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainMenuActivity : AppCompatActivity() {
@@ -19,7 +20,6 @@ class MainMenuActivity : AppCompatActivity() {
     private lateinit var adapter: HorizontalRecyclerView
     private lateinit var recyclerView: RecyclerView
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,7 +31,7 @@ class MainMenuActivity : AppCompatActivity() {
         }
 
         recyclerView = findViewById(R.id.rvRecommend)
-        adapter = HorizontalRecyclerView()
+        adapter = HorizontalRecyclerView(this)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyclerView.adapter = adapter
 
@@ -52,6 +52,12 @@ class MainMenuActivity : AppCompatActivity() {
         val basketButton = findViewById<ImageButton>(R.id.btBasket)
         basketButton.setOnClickListener {
             val intent = Intent(this, BasketActivity::class.java)
+            startActivity(intent)
+        }
+
+        val btAddProduct: ImageButton = findViewById(R.id.btAddProduct)
+        btAddProduct.setOnClickListener {
+            val intent = Intent(this, SubirProductoActivity::class.java)
             startActivity(intent)
         }
     }

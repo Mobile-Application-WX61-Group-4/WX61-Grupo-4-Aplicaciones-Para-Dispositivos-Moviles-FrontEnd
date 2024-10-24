@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.artisania_mobile_views.Adapter.HorizontalRecyclerView
+import com.example.artisania_mobile_views.Adapters.HorizontalRecyclerView
 import com.example.artisania_mobile_views.R
 class RecyclerViewFragment : Fragment() {
 
@@ -21,7 +21,7 @@ class RecyclerViewFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_recycler_view, container, false)
         recyclerView = view.findViewById(R.id.recyclerView)
-        adapter = HorizontalRecyclerView()
+        adapter = HorizontalRecyclerView(this.requireContext())
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recyclerView.adapter = adapter
         return view

@@ -15,4 +15,23 @@
     <string name="pay_with_card">Pay with card</string>
     <string name="totalAmmont">Total</string>
     <string name="congratulations">Congratulations!!!</string>
+    <string name="back_button">back_button</string>
+    <string name="artesano_1">artesano_1</string>
+    <string name="info_button">info_button</string>
+    <string name="voice_input">voice_input</string>
+    <string name="escribe_tu_mensaje">escribe_tu_mensaje</string>
+    <string name="ingrese_el_nombre_del_producto">ingrese_el_nombre_del_producto</string>
+    <string name="nombre_del_product">nombre_del_product</string>
+    <string name="select_image">select_image</string>
+    <string name="go_back">go_back</string>
+    <string name="btadd">btAdd</string>
+    <string name="btremove">btRemove</string>
+    <string name="btfavoritos">btFavoritos</string>
+    <string name="custom">custom</string>
+    <string name="btremove_external">btRemove</string>
+    <string name="btaddProduct_external">btAdd</string>
+    <string name="btaddcolors">btAddColors</string>
+    <string name="btremoveColors">btRemove</string>
+    <string name="productonombre">productonombre</string>
+    <string name="add_to_basket">add_to_basket</string>
 </resources>

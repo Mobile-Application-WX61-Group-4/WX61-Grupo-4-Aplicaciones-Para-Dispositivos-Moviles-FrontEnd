@@ -1,4 +1,4 @@
-package com.example.artisania_mobile_views.Adapter
+package com.example.artisania_mobile_views.Adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

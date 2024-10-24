@@ -1,4 +1,4 @@
-package com.example.artisania_mobile_views.Adapter
+package com.example.artisania_mobile_views.Adapters
 
 import android.view.LayoutInflater
 import android.view.View
