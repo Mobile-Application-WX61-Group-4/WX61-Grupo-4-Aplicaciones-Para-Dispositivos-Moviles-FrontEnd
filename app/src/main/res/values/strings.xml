@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">artisania_mobile_views</string>
+    <string name="hello">Hello User, What art from artisania you want?</string>
+    <string name="combo">Recommended combo</string>
+    <string name="my_basket">My Basket</string>
+    <string name="checkout">Checkout</string>
+    <string name="txcheckout">Checkout</string>
+    <string name="_600_00">$600.00</string>
+    <string name="total">TextView</string>
+    <string name="delivery_address">Delivery address</string>
+    <string name="_10th_avenue_lekki_lagos_state">10th avenue, Lekki, Lagos State</string>
+    <string name="number_we_can_call">Number we can call</string>
+    <string name="_09090605708">09090605708</string>
+    <string name="pay_on_delivery">Pay on delivery</string>
+    <string name="pay_with_card">Pay with card</string>
+    <string name="totalAmmont">Total</string>
+    <string name="congratulations">Congratulations!!!</string>
+    <string name="back_button">back_button</string>
+    <string name="artesano_1">artesano_1</string>
+    <string name="info_button">info_button</string>
+    <string name="voice_input">voice_input</string>
+    <string name="escribe_tu_mensaje">escribe_tu_mensaje</string>
+    <string name="ingrese_el_nombre_del_producto">ingrese_el_nombre_del_producto</string>
+    <string name="nombre_del_product">nombre_del_product</string>
+    <string name="select_image">select_image</string>
+    <string name="go_back">go_back</string>
+    <string name="btadd">btAdd</string>
+    <string name="btremove">btRemove</string>
+    <string name="btfavoritos">btFavoritos</string>
+    <string name="custom">custom</string>
+    <string name="btremove_external">btRemove</string>
+    <string name="btaddProduct_external">btAdd</string>
+    <string name="btaddcolors">btAddColors</string>
+    <string name="btremoveColors">btRemove</string>
+    <string name="productonombre">productonombre</string>
+    <string name="add_to_basket">add_to_basket</string>
+    <string name="btFavoritos">btFavoritos\n</string>
+    <string name="btAdd">btAdd</string>
+    <string name="btRemove">btRemove</string>
+
+</resources>
