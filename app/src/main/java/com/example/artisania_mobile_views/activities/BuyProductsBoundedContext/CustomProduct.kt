@@ -53,10 +53,10 @@ class CustomProduct : AppCompatActivity(), ColorAdapter.OnItemClickListener {
         }
 
         if (product != null) {
-            findViewById<TextView>(R.id.tvProductoNombre).text = product.name
+            findViewById<TextView>(R.id.tvProductoNombre).text = product.nombre
             val imageView = findViewById<ImageView>(R.id.ivImage)
 
-            Picasso.get().load(product.image).into(imageView)
+            Picasso.get().load(product.imagen).into(imageView)
         } else {
             // Handle the error case where the product is null
             println("Error: Product is null")

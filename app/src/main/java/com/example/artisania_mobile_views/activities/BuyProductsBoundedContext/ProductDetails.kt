@@ -68,7 +68,7 @@ class ProductDetails : AppCompatActivity() {
             val dao= AppDataBase.getInstance(this).getDao()
             dao.insertOne(product!!)
 
-            Toast.makeText(this, "Person "+ product!!.name+" added to basquet", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Person "+ product!!.nombre+" added to basquet", Toast.LENGTH_SHORT).show()
 
         }
 
@@ -86,12 +86,12 @@ class ProductDetails : AppCompatActivity() {
     }
 
     private fun displayProductDetails(product: Product) {
-        findViewById<TextView>(R.id.tvProductoNombre).text = product.name
-        findViewById<TextView>(R.id.tvPriice).text = product.price.toString()
-        findViewById<TextView>(R.id.tvDetalis).text = product.description
+        findViewById<TextView>(R.id.tvProductoNombre).text = product.nombre
+        findViewById<TextView>(R.id.tvPriice).text = product.precio.toString()
+        findViewById<TextView>(R.id.tvDetalis).text = product.descripcion
 
         val imageView = findViewById<ImageView>(R.id.ivImage)
-        Picasso.get().load(product.image).into(imageView)
+        Picasso.get().load(product.imagen).into(imageView)
     }
 
 

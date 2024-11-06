@@ -23,11 +23,11 @@ class HorizontalRecyclerView(private val products: List<Product>, private val it
         private val ivImagen = itemView.findViewById<ImageView>(R.id.ivProduct)
 
         fun bind(product: Product, clickListener: OnItemClickListener) {
-            tvName.text = product.name
-            tvPrice.text = product.price.toString()
+            tvName.text = product.nombre
+            tvPrice.text = product.precio.toString()
 
             Picasso.get()
-                .load(product.image)
+                .load(product.imagen)
                 .into(ivImagen)
             cvProduct.setOnClickListener {
                 clickListener.onItemClick(product)

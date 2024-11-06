@@ -1,6 +1,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0A3344"
@@ -51,11 +52,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_edittext"
+            android:backgroundTint="#A9A9A9"
             android:hint="@string/ingrese_el_nombre_del_producto"
-            android:textColorHint="#80FFFFFF"
             android:padding="8dp"
             android:textColor="@android:color/black"
-            android:backgroundTint="#A9A9A9" />
+            android:textColorHint="#80FFFFFF" />
 
         <!-- Product Quantity -->
         <TextView
@@ -73,13 +74,33 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_edittext"
+            android:backgroundTint="#A9A9A9"
             android:hint="Ingrese la cantidad"
-            android:textColorHint="#80FFFFFF"
             android:inputType="number"
             android:padding="8dp"
             android:textColor="@android:color/black"
-            android:backgroundTint="#A9A9A9" />
+            android:textColorHint="#80FFFFFF" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Descripción del producto"
+            android:textColor="#234D5E"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/product_description_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_edittext"
+            android:backgroundTint="#A9A9A9"
+            android:hint="Ingrese la descripción del producto"
+            android:padding="8dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#80FFFFFF" />
         <!-- Customizable Options -->
         <TextView
             android:layout_width="wrap_content"

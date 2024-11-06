@@ -63,10 +63,10 @@ class MainMenuActivity : AppCompatActivity(), HorizontalRecyclerView.OnItemClick
 
     }
 
-    private fun loadProducts(onComplete: (List<Product>) -> Unit) {
+    private fun loadProducts(callback: (List<Product>) -> Unit) {
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://my-json-server.typicode.com/")
+            .baseUrl("https://artisania.azurewebsites.net/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -76,6 +76,7 @@ class MainMenuActivity : AppCompatActivity(), HorizontalRecyclerView.OnItemClick
         request.enqueue(object : Callback<ApiResponse> {
             override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
                 if (response.isSuccessful) {
+                    /*
                     val productsApi: ApiResponse = response.body()!!
                     val productList = mutableListOf<Product>()
 
@@ -84,7 +85,13 @@ class MainMenuActivity : AppCompatActivity(), HorizontalRecyclerView.OnItemClick
 
                     }
                     onComplete(productList)
+                    */
+                    val products = response.body()?.map { it.toProduct() } ?: emptyList()
+                    callback(products)
+                }else{
+                    println("Error: ${response.errorBody()?.string()}")
                 }
+
             }
 
 

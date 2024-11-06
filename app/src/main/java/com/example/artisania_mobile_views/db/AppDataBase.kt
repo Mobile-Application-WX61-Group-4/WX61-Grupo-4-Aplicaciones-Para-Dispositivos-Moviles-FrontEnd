@@ -4,9 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.example.artisania_mobile_views.models.Converters
 import com.example.artisania_mobile_views.models.Product
 
-@Database(entities = [Product::class], version = 1)
+@Database(entities = [Product::class], version = 2)
+@TypeConverters(Converters::class)
 abstract class AppDataBase: RoomDatabase() {
 
     abstract fun getDao(): ProductDao
@@ -18,6 +21,7 @@ abstract class AppDataBase: RoomDatabase() {
             if (INSTANCE == null) {
                 INSTANCE = Room
                     .databaseBuilder(context, AppDataBase::class.java, "products.db")
+                    .fallbackToDestructiveMigration()
                     .allowMainThreadQueries()
                     .build()
             }

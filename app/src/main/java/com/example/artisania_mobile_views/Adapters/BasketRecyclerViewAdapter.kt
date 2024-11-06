@@ -19,11 +19,11 @@ class BasketRecyclerViewAdapter(private val products: List<Product>, private val
             private val ivImagen = itemView.findViewById<ImageView>(R.id.ivProductbasquet)
 
             fun bind(product: Product, clickListener: OnItemClickListener) {
-                tvName.text = product.name
+                tvName.text = product.nombre
                 //tvPrice.text = product.price.toString()
 
                 Picasso.get()
-                    .load(product.image)
+                    .load(product.imagen)
                     .into(ivImagen)
                 cvbasquetproduct.setOnClickListener {
                     clickListener.onItemClick(product)
