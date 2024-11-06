@@ -52,5 +52,7 @@ class Product(
     var autor: String? = null,
 
     @ColumnInfo(name = "caracteristicas")
-    var caracteristicas: List<Caracteristica>? = null
+    var caracteristicas: List<Caracteristica>? = null,
+
+    var cantidad: Int = 0
 ) : Serializable

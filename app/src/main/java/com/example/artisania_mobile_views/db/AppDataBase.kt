@@ -8,7 +8,7 @@ import androidx.room.TypeConverters
 import com.example.artisania_mobile_views.models.Converters
 import com.example.artisania_mobile_views.models.Product
 
-@Database(entities = [Product::class], version = 2)
+@Database(entities = [Product::class], version = 3)
 @TypeConverters(Converters::class)
 abstract class AppDataBase: RoomDatabase() {
 

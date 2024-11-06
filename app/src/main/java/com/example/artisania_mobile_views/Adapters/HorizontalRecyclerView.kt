@@ -1,17 +1,15 @@
 package com.example.artisania_mobile_views.Adapters
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageButton
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.artisania_mobile_views.R
-import com.example.artisania_mobile_views.activities.BuyProductsBoundedContext.ProductDetails
 import com.example.artisania_mobile_views.models.Product
 import com.squareup.picasso.Picasso
 
@@ -22,6 +20,9 @@ class HorizontalRecyclerView(private val products: List<Product>, private val it
         private val cvProduct: CardView = itemView.findViewById(R.id.cvProduct)
         private val ivImagen = itemView.findViewById<ImageView>(R.id.ivProduct)
 
+        private val btAddBasket = itemView.findViewById<AppCompatImageButton>(R.id.btAddBasket)
+
+
         fun bind(product: Product, clickListener: OnItemClickListener) {
             tvName.text = product.nombre
             tvPrice.text = product.precio.toString()
@@ -29,7 +30,12 @@ class HorizontalRecyclerView(private val products: List<Product>, private val it
             Picasso.get()
                 .load(product.imagen)
                 .into(ivImagen)
-            cvProduct.setOnClickListener {
+
+            btAddBasket.setOnClickListener {
+               clickListener.onItemClickBasquet(product)
+            }
+
+            ivImagen.setOnClickListener {
                 clickListener.onItemClick(product)
             }
         }
@@ -51,5 +57,6 @@ class HorizontalRecyclerView(private val products: List<Product>, private val it
 
     interface OnItemClickListener {
         fun onItemClick(product: Product)
+        fun onItemClickBasquet(product: Product)
     }
 }

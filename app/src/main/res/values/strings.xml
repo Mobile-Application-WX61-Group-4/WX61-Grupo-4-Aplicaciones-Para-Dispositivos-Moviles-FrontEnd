@@ -5,7 +5,7 @@
     <string name="my_basket">My Basket</string>
     <string name="checkout">Checkout</string>
     <string name="txcheckout">Checkout</string>
-    <string name="_600_00">$600.00</string>
+    <string name="total_price_format">$%.2f</string>
     <string name="total">TextView</string>
     <string name="delivery_address">Delivery address</string>
     <string name="_10th_avenue_lekki_lagos_state">10th avenue, Lekki, Lagos State</string>

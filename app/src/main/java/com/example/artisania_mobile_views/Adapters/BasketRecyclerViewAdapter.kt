@@ -3,6 +3,7 @@ package com.example.artisania_mobile_views.Adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -17,15 +18,21 @@ class BasketRecyclerViewAdapter(private val products: List<Product>, private val
             //private val tvPrice: TextView = itemView.findViewById(R.id.tvPrice)
             private val cvbasquetproduct: CardView = itemView.findViewById(R.id.cvBasquetproduct)
             private val ivImagen = itemView.findViewById<ImageView>(R.id.ivProductbasquet)
+            private val tvPrice = itemView.findViewById<TextView>(R.id.tvPrice)
+            private val btDelete = itemView.findViewById<ImageButton>(R.id.btDelete)
+            private val tvCantidad = itemView.findViewById<TextView>(R.id.tvCantidad)
 
             fun bind(product: Product, clickListener: OnItemClickListener) {
                 tvName.text = product.nombre
                 //tvPrice.text = product.price.toString()
+                tvPrice.text = product.precio.toString()
+                tvCantidad.text = product.cantidad.toString()
 
                 Picasso.get()
                     .load(product.imagen)
                     .into(ivImagen)
-                cvbasquetproduct.setOnClickListener {
+
+                btDelete.setOnClickListener {
                     clickListener.onItemClick(product)
                 }
             }

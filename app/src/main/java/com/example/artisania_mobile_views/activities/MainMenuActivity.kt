@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,12 +19,14 @@ import com.example.artisania_mobile_views.activities.ChatBoundedContext.SubirPro
 import com.example.artisania_mobile_views.models.Product
 import com.example.artisania_mobile_views.network.ProductsApiService
 import com.example.avanceproyecto_atenisa.comunicacion.ApiResponse
+import com.example.avanceproyecto_atenisa.db.AppDataBase
 import com.google.android.material.tabs.TabLayoutMediator
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import com.google.firebase.FirebaseApp
 
 class MainMenuActivity : AppCompatActivity(), HorizontalRecyclerView.OnItemClickListener {
 
@@ -33,7 +36,7 @@ class MainMenuActivity : AppCompatActivity(), HorizontalRecyclerView.OnItemClick
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main_menu)
-
+        FirebaseApp.initializeApp(this)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -102,11 +105,22 @@ class MainMenuActivity : AppCompatActivity(), HorizontalRecyclerView.OnItemClick
 
     }
 
+
     override fun onItemClick(product: Product) {
         val intent = Intent(this, ProductDetails::class.java)
         intent.putExtra("product", product)
         startActivity(intent)
     }
+
+    override fun onItemClickBasquet(product: Product) {
+
+        product.cantidad = 1
+        val dao= AppDataBase.getInstance(this).getDao()
+        dao.insertOne(product)
+
+        Toast.makeText(this, "Person "+ product.nombre+" added to basquet", Toast.LENGTH_SHORT).show()
+    }
+
 
 
 }

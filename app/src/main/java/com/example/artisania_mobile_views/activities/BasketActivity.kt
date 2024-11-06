@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +20,9 @@ import com.example.avanceproyecto_atenisa.db.AppDataBase
 class BasketActivity : AppCompatActivity(), BasketRecyclerViewAdapter.OnItemClickListener {
 
     private lateinit var recyclerView : RecyclerView
+    private lateinit var tvTotalPice : TextView
 
+    val suma = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +33,7 @@ class BasketActivity : AppCompatActivity(), BasketRecyclerViewAdapter.OnItemClic
             finish()
         }
         recyclerView = findViewById(R.id.rvBasket)
+        tvTotalPice = findViewById(R.id.tvPrice)
 
         val checkoutButton = findViewById<Button>(R.id.btCheckout)
         checkoutButton.setOnClickListener {
@@ -60,10 +64,16 @@ class BasketActivity : AppCompatActivity(), BasketRecyclerViewAdapter.OnItemClic
         dialog.show()
     }
 
+    private fun calculateTotalPrice(products: List<Product>): Double {
+        return products.sumOf { it.precio }
+    }
+
     override fun onResume() {
         super.onResume()
 
         loadProducts { products ->
+            val totalPrice = calculateTotalPrice(products)
+            tvTotalPice.text = getString(R.string.total_price_format, totalPrice)
             recyclerView.adapter = BasketRecyclerViewAdapter(products, this)
             recyclerView.layoutManager = LinearLayoutManager(this@BasketActivity)
         }
@@ -75,7 +85,9 @@ class BasketActivity : AppCompatActivity(), BasketRecyclerViewAdapter.OnItemClic
         onComplete(dao.getAll())
     }
     override fun onItemClick(product: Product) {
-        TODO("Not yet implemented")
+        val dao = AppDataBase.getInstance(this).getDao()
+        dao.delete(product)
+        onResume()
     }
 
 }

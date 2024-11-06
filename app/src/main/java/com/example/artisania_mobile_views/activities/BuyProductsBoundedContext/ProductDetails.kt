@@ -65,6 +65,7 @@ class ProductDetails : AppCompatActivity() {
 
         btBasquet = findViewById(R.id.btBasquet2)
         btBasquet.setOnClickListener {
+            product!!.cantidad = cantidad
             val dao= AppDataBase.getInstance(this).getDao()
             dao.insertOne(product!!)
 

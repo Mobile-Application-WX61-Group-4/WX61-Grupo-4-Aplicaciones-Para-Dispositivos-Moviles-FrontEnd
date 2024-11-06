@@ -85,15 +85,16 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRecommend"
-        android:layout_width="406dp"
-        android:layout_height="172dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="5dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tlCatalog"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRecommend" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tlCatalog"
