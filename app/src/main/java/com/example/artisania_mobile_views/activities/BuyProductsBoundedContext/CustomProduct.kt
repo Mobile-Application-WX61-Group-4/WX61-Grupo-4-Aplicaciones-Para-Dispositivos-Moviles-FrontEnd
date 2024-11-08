@@ -62,6 +62,8 @@ class CustomProduct : AppCompatActivity(), ColorAdapter.OnItemClickListener {
             println("Error: Product is null")
         }
 
+
+
         loadcolor()
     }
 
