@@ -51,7 +51,7 @@ class SubirProductoActivity : AppCompatActivity() {
 
         btAddProduct = findViewById(R.id.add_product_button)
         tvProductoNombre = findViewById(R.id.product_name_input)
-        tvProductoPrecio = findViewById(R.id.product_quantity_input)
+        tvProductoPrecio = findViewById(R.id.price_input)
         tvProductoDescripcion = findViewById(R.id.product_description_input)
         ivProductImage = findViewById(R.id.product_image)
 
