@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.artisania_mobile_views.R
+import com.example.artisania_mobile_views.activities.ChatBoundedContext.ChatMainActivity
 import com.example.artisania_mobile_views.models.Product
 import com.example.avanceproyecto_atenisa.adapter.ColorAdapter
 import com.example.avanceproyecto_atenisa.models.Color
@@ -45,6 +46,14 @@ class CustomProduct : AppCompatActivity(), ColorAdapter.OnItemClickListener {
             finish()
         }
 
+        val btCallCraftsman: Button = findViewById(R.id.btCraftsman)
+        btCallCraftsman.setOnClickListener {
+
+            val intent = Intent(this, ChatMainActivity::class.java)
+            intent.putExtra("product", product)
+            startActivity(intent)
+            finish()
+        }
         val btAddBasket: Button = findViewById(R.id.btAddBasket)
         btAddBasket.setOnClickListener {
 

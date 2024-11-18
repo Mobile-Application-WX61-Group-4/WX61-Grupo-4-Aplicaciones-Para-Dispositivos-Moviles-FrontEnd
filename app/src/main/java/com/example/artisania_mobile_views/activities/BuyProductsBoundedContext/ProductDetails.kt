@@ -69,7 +69,7 @@ class ProductDetails : AppCompatActivity() {
             val dao= AppDataBase.getInstance(this).getDao()
             dao.insertOne(product!!)
 
-            Toast.makeText(this, "Person "+ product!!.nombre+" added to basquet", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, product!!.nombre+" added to basquet", Toast.LENGTH_SHORT).show()
 
         }
 

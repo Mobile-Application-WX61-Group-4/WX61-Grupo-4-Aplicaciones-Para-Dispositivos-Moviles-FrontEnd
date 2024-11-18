@@ -22,8 +22,16 @@ class BasketRecyclerViewAdapter(private val products: List<Product>, private val
             private val btDelete = itemView.findViewById<ImageButton>(R.id.btDelete)
             private val tvCantidad = itemView.findViewById<TextView>(R.id.tvCantidad)
 
+            fun TextView.setTextWithLimit(text: String, limit: Int = 26) {
+                this.text = if (text.length > limit) {
+                    text.take(limit) + "..."
+                } else {
+                    text
+                }
+            }
             fun bind(product: Product, clickListener: OnItemClickListener) {
                 tvName.text = product.nombre
+                tvName.setTextWithLimit(product.nombre)
                 //tvPrice.text = product.price.toString()
                 tvPrice.text = product.precio.toString()
                 tvCantidad.text = product.cantidad.toString()

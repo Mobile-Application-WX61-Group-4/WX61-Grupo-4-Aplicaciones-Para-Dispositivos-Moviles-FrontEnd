@@ -14,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.artisania_mobile_views.R
+import com.example.artisania_mobile_views.activities.MainMenuActivity
 import com.example.artisania_mobile_views.models.Product
 import com.example.artisania_mobile_views.network.ProductsApiService
 import com.example.avanceproyecto_atenisa.comunicacion.Caracteristica
@@ -93,7 +94,7 @@ class SubirProductoActivity : AppCompatActivity() {
                 //}
             }
 
-            val intent = Intent(this, ChatMainActivity::class.java)
+            val intent = Intent(this, MainMenuActivity::class.java)
             startActivity(intent)
         }
 

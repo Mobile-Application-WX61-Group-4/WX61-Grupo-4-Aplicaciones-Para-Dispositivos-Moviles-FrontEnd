@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.artisania_mobile_views.R
+import com.example.artisania_mobile_views.activities.BuyProductsBoundedContext.CustomProduct
+import com.example.artisania_mobile_views.activities.BuyProductsBoundedContext.ProductDetails
+import com.example.artisania_mobile_views.models.Product
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -23,6 +26,8 @@ class ChatArtesano : AppCompatActivity() {
         val messageInput: EditText = findViewById(R.id.message_input)
         val voiceInputButton: ImageButton = findViewById(R.id.voice_input_button)
         val backButton: ImageButton = findViewById(R.id.back_button)
+        val product = intent.getSerializableExtra("product") as? Product
+
 
         messageAdapter = MessageAdapter(messages)
         messageRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -41,7 +46,8 @@ class ChatArtesano : AppCompatActivity() {
         }
 
         backButton.setOnClickListener {
-            val intent = Intent(this, ChatMainActivity::class.java)
+            val intent = Intent(this, CustomProduct::class.java)
+            intent.putExtra("product", product)
             startActivity(intent)
             finish()
         }
