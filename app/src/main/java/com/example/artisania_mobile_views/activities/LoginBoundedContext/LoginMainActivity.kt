@@ -76,9 +76,15 @@ class MainActivity : AppCompatActivity() {
                             var usuario = customer?.usuario ?: "User"
                             usuario = usuario.replace(Regex("\\d"), " ")
                             Log.d("Customer", customer.toString())
+
+                            // Guardar el estado de isArtisan en SharedPreferences
+                            val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+                            val editor = sharedPreferences.edit()
+                            editor.putBoolean("isArtisan", customer?.isArtisan ?: false)
+                            editor.putString("usuario", usuario)
+                            editor.apply()
+
                             val intent = Intent(this@MainActivity, MainMenuActivity::class.java)
-                            intent.putExtra("usuario", usuario)
-                            intent.putExtra("isArtisan", customer?.isArtisan)
                             startActivity(intent)
                         }
                     } else {

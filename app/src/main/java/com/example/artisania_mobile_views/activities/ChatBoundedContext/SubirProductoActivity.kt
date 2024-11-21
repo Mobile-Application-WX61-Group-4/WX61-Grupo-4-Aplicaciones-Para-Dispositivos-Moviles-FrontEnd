@@ -42,6 +42,7 @@ class SubirProductoActivity : AppCompatActivity() {
     private lateinit var tvProductoNombre: EditText
     private lateinit var tvProductoPrecio: EditText
     private lateinit var tvProductoDescripcion: EditText
+    private lateinit var tvCategoria: EditText
     private lateinit var ivProductImage: ImageView
     private lateinit var imageInput: EditText
     private var imagePath: String? = null
@@ -60,6 +61,7 @@ class SubirProductoActivity : AppCompatActivity() {
         tvProductoDescripcion = findViewById(R.id.product_description_input)
         ivProductImage = findViewById(R.id.product_image)
         imageInput = findViewById(R.id.image_input)
+        tvCategoria = findViewById(R.id.categoria_input)
 
         if (!allPermissionsGranted()) {
             ActivityCompat.requestPermissions(
@@ -86,9 +88,10 @@ class SubirProductoActivity : AppCompatActivity() {
             val precio = tvProductoPrecio.text.toString().toDoubleOrNull() ?: 0.0
             val descripcion = tvProductoDescripcion.text.toString().ifBlank { "Descripción por defecto" }
             val imagen = imageInput.text.toString().ifBlank { "https://default.image.url" }
+            val categoria = tvCategoria.text.toString().ifBlank { "Categoría por defecto" }
 
             if (nombre.isNotBlank() && precio > 0 && descripcion.isNotBlank()) {
-                addProduct(Product(null, nombre, precio, descripcion, null, null, null, null, null, null, null, imagen, null, null, emptyList())) { success ->
+                addProduct(Product(null, nombre, precio, descripcion, null, null, null, null, null, null, categoria, imagen, null, null, emptyList())) { success ->
                     if (success) {
                         Toast.makeText(this, "Producto añadido con éxito", Toast.LENGTH_SHORT).show()
                     } else {

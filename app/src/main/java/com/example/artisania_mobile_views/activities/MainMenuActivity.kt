@@ -83,7 +83,9 @@ class MainMenuActivity : AppCompatActivity(), HorizontalRecyclerView.OnItemClick
 
 
         val btAddProduct: ImageButton = findViewById(R.id.btAddProduct)
-        if (intent.getBooleanExtra("isArtisan", false)) {
+        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+        val isArtisan = sharedPreferences.getBoolean("isArtisan", false)
+        if (isArtisan) {
             btAddProduct.visibility = View.VISIBLE
             btAddProduct.setOnClickListener {
                 val intent = Intent(this, SubirProductoActivity::class.java)
@@ -106,7 +108,7 @@ class MainMenuActivity : AppCompatActivity(), HorizontalRecyclerView.OnItemClick
             }
         })
 
-        val usuario = intent.getStringExtra("usuario") ?: "User"
+        val usuario = sharedPreferences.getString("usuario", "User")
         val tvWelcome = findViewById<TextView>(R.id.tvWelcome)
         tvWelcome.text = "Hello $usuario, What art from artisania you want?"
     }

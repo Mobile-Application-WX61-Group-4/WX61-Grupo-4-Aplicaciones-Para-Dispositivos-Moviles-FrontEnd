@@ -50,7 +50,7 @@ class CustomProduct : AppCompatActivity(), ColorAdapter.OnItemClickListener {
         val btCallCraftsman: Button = findViewById(R.id.btCraftsman)
         btCallCraftsman.setOnClickListener {
 
-            val intent = Intent(this, CustomProduct::class.java)
+            val intent = Intent(this, ChatMainActivity::class.java)
             intent.putExtra("product", product as Serializable)
             startActivity(intent)
         }
